@@ -1,4 +1,4 @@
-import app from '@weijs/app';
+import app from '@mxjs/app';
 
 const buildPath = (...arr) => {
   // Remove empty element
