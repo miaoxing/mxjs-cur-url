@@ -87,6 +87,6 @@ const curUrl = {
   toApiId(id, path, argsOrParam, params) {
     return this.toApi(buildPath(id || app.id, path), params);
   }
-}
+};
 
 export default curUrl;
