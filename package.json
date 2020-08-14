@@ -12,5 +12,8 @@
   },
   "dependencies": {
     "@mxjs/app": "^0.1.1"
+  },
+  "jest": {
+    "preset": "jest-preset-miaoxing"
   }
 }
