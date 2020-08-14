@@ -11,7 +11,6 @@
     "@miaoxing/dev": "^6.0.0"
   },
   "dependencies": {
-    "@mxjs/app": "^0.1.1",
-    "query-string": "^6.13.1"
+    "@mxjs/app": "^0.1.1"
   }
 }
