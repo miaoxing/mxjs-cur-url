@@ -7,73 +7,97 @@ const buildPath = (...arr) => {
 
 const curUrl = {
   /**
-   * 返回当前控制器的入口页地址
+   * 返回当前页面的入口页地址
    */
   index(params = null) {
     return this.to(null, params);
   },
 
   /**
-   * 返回当前控制器的创建页地址
+   * 返回当前页面的创建页地址
    */
   new(params = null) {
     return this.to('new', params);
   },
 
+  /**
+   * 返回当前页面的编辑页地址
+   */
   edit(id = null, params = null) {
     return this.toId(id, 'edit', params);
   },
 
+  /**
+   * 返回当前页面的查看页地址
+   */
   show(id = null, params = null) {
     return this.toId(id, null, params);
   },
 
-  create(params = null) {
-    return this.to('create', params);
-  },
-
-  update(params = null) {
-    return this.to('update', params);
-  },
-
-  destroy(id = null, params = null) {
-    return this.toId(id, 'destroy', params);
-  },
-
-  form(params = null) {
-    return app.id ? this.create(params) : this.update(params);
-  },
-
+  /**
+   * 获取当前地址对应的 API 地址
+   *
+   * @experimental
+   */
   api(params = null) {
-    return this.toApiId(null, app.action === 'show' ? null : app.action, params);
+    let url = window.location.pathname;
+    if (url.startsWith('/admin')) {
+      url = url.substr(7);
+    }
+    return app.apiUrl(url);
   },
 
-  apiIndex(params = null) {
+  /**
+   * 获取当前页面对应的接口数据的地址
+   *
+   * @experimental
+   */
+  apiData(params = null) {
+    return app.page.index ? this.apiColl(params) : this.apiForm(params);
+  },
+
+  /**
+   * 获取当前页面对应的表单接口数据的地址
+   *
+   * @experimental
+   */
+  apiForm(params = null) {
+    if (app.id) {
+      return this.apiShow(null, params);
+    } else {
+      return this.toApi('defaults', params);
+    }
+  },
+
+  /**
+   * 获取当前页面对应的集合接口数据的地址
+   */
+  apiColl(params = null) {
     return this.toApi(null, params);
   },
 
-  apiShow(id = null, params = null) {
+  apiIndex(params = null) {
+    return this.apiColl(params);
+  },
+
+  apiItem(id = null, params = null) {
     return this.toApiId(id, null, params);
   },
 
-  apiCreate(params = null) {
-    return this.toApi('create', params);
+  apiShow(id = null, params = null) {
+    return this.apiItem(id, params);
   },
 
-  apiUpdate(params = null) {
-    return this.toApi('update', params);
-  },
-
-  apiDestroy(id = null, params = null) {
-    return this.toApiId(id, 'destroy', params);
-  },
-
-  apiForm(params = null) {
-    return app.id ? this.apiUpdate(params) : this.apiCreate(params);
+  apiFormUrlAndMethod(params = null) {
+    if (app.id) {
+      return {method: 'PATCH', url: this.apiShow(null, params)}
+    } else {
+      return {method: 'POST', url: this.apiIndex(params)};
+    }
   },
 
   to(path, argsOrParam, params) {
-    return app.url(buildPath(app.namespace, app.controller, path), argsOrParam, params);
+    return app.url(buildPath(app.page.collection, path), argsOrParam, params);
   },
 
   toId(id, path, params = null) {
@@ -81,7 +105,13 @@ const curUrl = {
   },
 
   toApi(path, argsOrParam, params) {
-    return app.apiUrl(app.controller + '/' + path + window.location.search, argsOrParam, params);
+    let collection;
+    if (app.page.collection.startsWith('admin/')) {
+      collection = app.page.collection.substr(6);
+    } else {
+      collection = app.page.collection;
+    }
+    return app.apiUrl(buildPath(collection, path) + window.location.search, argsOrParam, params);
   },
 
   toApiId(id, path, argsOrParam, params) {

@@ -9,7 +9,6 @@ describe('cur-url', () => {
     window.location = {
       href: '',
       search: '',
-
     };
   });
 
