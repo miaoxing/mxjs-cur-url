@@ -1,4 +1,4 @@
-import {app} from '@mxjs/app';
+import {app, req} from '@mxjs/app';
 import $ from 'miaoxing';
 
 const buildPath = (...arr) => {
@@ -41,11 +41,11 @@ const curUrl = {
    * @experimental
    */
   api(params = null) {
-    let url = window.location.pathname;
-    if (url.startsWith('/admin')) {
-      url = url.substr(7);
+    let url = req.getPathInfo().substr(1);
+    if (url.startsWith('admin')) {
+      url = url.substr(6);
     }
-    return $.apiUrl(url);
+    return $.apiUrl(url + window.location.search, params);
   },
 
   /**
