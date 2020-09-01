@@ -1,4 +1,5 @@
-import app from '@mxjs/app';
+import {app} from '@mxjs/app';
+import $ from 'miaoxing';
 
 const buildPath = (...arr) => {
   // Remove empty element
@@ -44,7 +45,7 @@ const curUrl = {
     if (url.startsWith('/admin')) {
       url = url.substr(7);
     }
-    return app.apiUrl(url);
+    return $.apiUrl(url);
   },
 
   /**
@@ -62,7 +63,7 @@ const curUrl = {
    * @experimental
    */
   apiForm(params = null) {
-    if (app.id) {
+    if ($.req('id')) {
       return this.apiShow(null, params);
     } else {
       return this.toApi('defaults', params);
@@ -89,7 +90,7 @@ const curUrl = {
   },
 
   apiFormUrlAndMethod(params = null) {
-    if (app.id) {
+    if ($.req('id')) {
       return {method: 'PATCH', url: this.apiShow(null, params)}
     } else {
       return {method: 'POST', url: this.apiIndex(params)};
@@ -97,11 +98,11 @@ const curUrl = {
   },
 
   to(path, argsOrParam, params) {
-    return app.url(buildPath(app.page.collection, path), argsOrParam, params);
+    return $.url(buildPath(app.page.collection, path), argsOrParam, params);
   },
 
   toId(id, path, params = null) {
-    return this.to(buildPath(id || app.id, path), params);
+    return this.to(buildPath(id || $.req('id'), path), params);
   },
 
   toApi(path, argsOrParam, params) {
@@ -111,11 +112,11 @@ const curUrl = {
     } else {
       collection = app.page.collection;
     }
-    return app.apiUrl(buildPath(collection, path) + window.location.search, argsOrParam, params);
+    return $.apiUrl(buildPath(collection, path) + window.location.search, argsOrParam, params);
   },
 
   toApiId(id, path, argsOrParam, params) {
-    return this.toApi(buildPath(id || app.id, path), params);
+    return this.toApi(buildPath(id || $.req('id'), path), params);
   },
 };
 

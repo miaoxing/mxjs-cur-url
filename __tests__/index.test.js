@@ -1,5 +1,5 @@
 import curUrl from '../';
-import app from '@mxjs/app';
+import {app} from '@mxjs/app';
 
 describe('cur-url', () => {
   const originalLocation = window.location;
