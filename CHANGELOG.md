@@ -1,3 +1,30 @@
+# [0.2.0](https://github.com/miaoxing/mxjs-cur-url/compare/v0.1.4...v0.2.0) (2020-09-01)
+
+
+### Bug Fixes
+
+* 生成当前 api 地址缺少查询参数，路由处理 ([079c887](https://github.com/miaoxing/mxjs-cur-url/commit/079c887e1cf605bb7dfba19eb508a0802782a67a))
+
+
+### Code Refactoring
+
+* 更改接口为 REST 风格 ([cb6508a](https://github.com/miaoxing/mxjs-cur-url/commit/cb6508a237a4697a05ad1c8ec3089c89da166ec9))
+* 重构 app 包，增加 Req，Url，Event 服务，统一配置 ([2ecb2aa](https://github.com/miaoxing/mxjs-cur-url/commit/2ecb2aaabb97b41847b5a439975cf35558c1b51d))
+
+
+### BREAKING CHANGES
+
+* 重构 app 包，增加 Req，Url，Event 等服务，统一配置
+* 更改接口为 REST 风格
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/app:** upgrade from 0.1.4 to 0.2.0
+
 ## [0.1.4](https://github.com/miaoxing/mxjs-cur-url/compare/v0.1.3...v0.1.4) (2020-08-17)
 
 
