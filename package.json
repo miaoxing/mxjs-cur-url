@@ -1,6 +1,6 @@
 {
   "name": "@mxjs/cur-url",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "main": "index.js",
   "license": "MIT",
   "publishConfig": {
@@ -8,10 +8,10 @@
     "registry": "https://registry.npmjs.org/"
   },
   "devDependencies": {
-    "@miaoxing/dev": "^6.1.2"
+    "@miaoxing/dev": "^6.2.0"
   },
   "dependencies": {
-    "@mxjs/app": "^0.2.2"
+    "@mxjs/app": "^0.2.3"
   },
   "jest": {
     "preset": "jest-preset-miaoxing"
