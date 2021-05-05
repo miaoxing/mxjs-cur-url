@@ -91,7 +91,7 @@ const curUrl = {
 
   apiFormUrlAndMethod(params = null) {
     if ($.req('id')) {
-      return {method: 'PATCH', url: this.apiShow(null, params)}
+      return {method: 'PATCH', url: this.apiShow(null, params)};
     } else {
       return {method: 'POST', url: this.apiIndex(params)};
     }
