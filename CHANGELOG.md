@@ -1,3 +1,15 @@
+## [0.2.13](https://github.com/miaoxing/mxjs-cur-url/compare/v0.2.12...v0.2.13) (2021-10-28)
+
+
+
+
+
+### Dependencies
+
+* **miaoxing:** upgrade from `0.2.5` to `0.3.0`
+* **@mxjs/app:** upgrade from `0.3.2` to `0.3.3`
+* **@miaoxing/dev:** upgrade from `7.0.1` to `8.0.0`
+
 ## [0.2.12](https://github.com/miaoxing/mxjs-cur-url/compare/v0.2.11...v0.2.12) (2021-05-12)
 
 
