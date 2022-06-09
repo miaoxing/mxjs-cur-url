@@ -1,29 +1,16 @@
 import curUrl from '../';
-import {req, url} from '@mxjs/app';
-import $ from 'miaoxing';
+import {url} from '@mxjs/app';
+import {bootstrap, resetUrl, setUrl} from '@mxjs/test';
 
-$.req = req.get.bind(req);
-$.url = url.to.bind(url);
-$.apiUrl = url.api.bind(url);
+bootstrap();
 
 describe('cur-url', () => {
-  const originalLocation = window.location;
-
-  beforeEach(() => {
-    delete window.location;
-    window.location = {
-      href: '',
-      search: '',
-      pathname: '/',
-    };
-  });
-
   afterEach(() => {
-    window.location = originalLocation;
+    resetUrl();
   });
 
   test('api', () => {
-    window.location.pathname = '/users';
+    setUrl('/users');
 
     expect(curUrl.api()).toBe('/api/users');
     expect(curUrl.api({a: 'b'})).toBe('/api/users?a=b');
@@ -34,17 +21,19 @@ describe('cur-url', () => {
   });
 
   test('dynamic api', () => {
-    window.location.search = '?r=users';
-    expect(curUrl.api()).toBe('/?r=api%2Fusers');
-    expect(curUrl.api({a: 'b'})).toBe('/?r=api%2Fusers&a=b');
+    url.setOption('apiRewrite', false);
 
-    window.location.search = '?r=users&key=value';
-    expect(curUrl.api()).toBe('/?r=api%2Fusers&key=value');
+    setUrl('?r=users');
+    expect(curUrl.api()).toBe('/index.php?r=api%2Fusers');
+    expect(curUrl.api({a: 'b'})).toBe('/index.php?r=api%2Fusers&a=b');
 
-    window.location.search = '?r=admin/users';
-    expect(curUrl.api()).toBe('/?r=admin-api%2Fusers');
+    setUrl('?r=users&key=value');
+    expect(curUrl.api()).toBe('/index.php?r=api%2Fusers&key=value');
 
-    window.location.search = '?r=admin/users&key=value';
-    expect(curUrl.api()).toBe('/?r=admin-api%2Fusers&key=value');
+    setUrl('?r=admin/users');
+    expect(curUrl.api()).toBe('/index.php?r=admin-api%2Fusers');
+
+    setUrl('?r=admin/users&key=value');
+    expect(curUrl.api()).toBe('/index.php?r=admin-api%2Fusers&key=value');
   });
 });
