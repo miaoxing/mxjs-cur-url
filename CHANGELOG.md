@@ -1,3 +1,21 @@
+# [1.0.0](https://github.com/miaoxing/mxjs-cur-url/compare/v0.2.19...v1.0.0) (2022-07-01)
+
+
+### Features
+
+* 发布 1.0.0 [release 1.0.0] ([c6f21b7](https://github.com/miaoxing/mxjs-cur-url/commit/c6f21b754552bab65c3546f8f9648a5fbefd551d))
+
+
+
+
+
+### Dependencies
+
+* **miaoxing:** upgrade from `0.4.2` to `0.4.3`
+* **@mxjs/app:** upgrade from `0.5.1` to `0.5.2`
+* **@miaoxing/dev:** upgrade from `8.1.1` to `8.1.2`
+* **@mxjs/test:** upgrade from `0.2.6` to `1.0.0`
+
 ## [0.2.19](https://github.com/miaoxing/mxjs-cur-url/compare/v0.2.18...v0.2.19) (2022-06-06)
 
 

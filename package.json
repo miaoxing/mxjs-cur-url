@@ -11,12 +11,12 @@
     "preset": "jest-preset-miaoxing"
   },
   "dependencies": {
-    "miaoxing": "^0.4.2",
-    "@mxjs/app": "^0.5.1"
+    "miaoxing": "^0.4.3",
+    "@mxjs/app": "^0.5.2"
   },
   "devDependencies": {
-    "@miaoxing/dev": "^8.1.1",
-    "@mxjs/test": "^0.2.6"
+    "@miaoxing/dev": "^8.1.2",
+    "@mxjs/test": "^1.0.0"
   },
   "ciDependencies": {
     "babel-preset-miaoxing": "miaoxing/babel-preset-miaoxing",
