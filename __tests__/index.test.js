@@ -31,9 +31,9 @@ describe('cur-url', () => {
     expect(curUrl.api()).toBe('/index.php?r=api%2Fusers&key=value');
 
     setUrl('?r=admin/users');
-    expect(curUrl.api()).toBe('/index.php?r=admin-api%2Fusers');
+    expect(curUrl.api()).toBe('/index.php?r=api%2Fadmin%2Fusers');
 
     setUrl('?r=admin/users&key=value');
-    expect(curUrl.api()).toBe('/index.php?r=admin-api%2Fusers&key=value');
+    expect(curUrl.api()).toBe('/index.php?r=api%2Fadmin%2Fusers&key=value');
   });
 });
