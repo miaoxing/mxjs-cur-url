@@ -1,6 +1,6 @@
 {
   "name": "@mxjs/cur-url",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "main": "index.js",
   "license": "MIT",
   "publishConfig": {
@@ -11,12 +11,12 @@
     "preset": "jest-preset-miaoxing"
   },
   "dependencies": {
-    "miaoxing": "^0.4.9",
-    "@mxjs/app": "^0.6.2"
+    "miaoxing": "^0.4.10",
+    "@mxjs/app": "^0.6.3"
   },
   "devDependencies": {
-    "@miaoxing/dev": "^8.2.3",
-    "@mxjs/test": "^1.0.7"
+    "@miaoxing/dev": "^8.2.4",
+    "@mxjs/test": "^1.0.8"
   },
   "ciDependencies": {
     "babel-preset-miaoxing": "miaoxing/babel-preset-miaoxing",
