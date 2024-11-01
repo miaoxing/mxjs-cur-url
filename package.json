@@ -1,6 +1,6 @@
 {
   "name": "@mxjs/cur-url",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "main": "index.js",
   "license": "MIT",
   "publishConfig": {
@@ -12,11 +12,11 @@
   },
   "dependencies": {
     "miaoxing": "^0.4.19",
-    "@mxjs/app": "^0.8.3"
+    "@mxjs/app": "^0.8.4"
   },
   "devDependencies": {
     "@miaoxing/dev": "^9.2.0",
-    "@mxjs/test": "^2.0.4"
+    "@mxjs/test": "^2.0.5"
   },
   "ciDependencies": {
     "babel-preset-miaoxing": "miaoxing/babel-preset-miaoxing",

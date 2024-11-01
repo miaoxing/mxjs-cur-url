@@ -1,3 +1,14 @@
+## [1.0.18](https://github.com/miaoxing/mxjs-cur-url/compare/v1.0.17...v1.0.18) (2024-11-01)
+
+
+
+
+
+### Dependencies
+
+* **@mxjs/app:** upgrade from `0.8.3` to `0.8.4`
+* **@mxjs/test:** upgrade from `2.0.4` to `2.0.5`
+
 ## [1.0.17](https://github.com/miaoxing/mxjs-cur-url/compare/v1.0.16...v1.0.17) (2024-09-01)
 
 
