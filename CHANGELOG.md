@@ -1,3 +1,27 @@
+# [2.0.0](https://github.com/miaoxing/mxjs-cur-url/compare/v1.0.18...v2.0.0) (2024-12-30)
+
+
+### Features
+
+* **cur-url:** 生成 URL 地址不再附加 api 地址 ([525a787](https://github.com/miaoxing/mxjs-cur-url/commit/525a787c1e58f730787deb551379d426b0398d78))
+
+
+### BREAKING CHANGES
+
+* **cur-url:** 生成 URL 地址不再附加 api 地址
+
+
+
+
+
+### Dependencies
+
+* **append-url:** upgrade from `1.1.0` to `1.1.1`
+* **miaoxing:** upgrade from `0.4.19` to `0.4.20`
+* **@mxjs/app:** upgrade from `0.8.4` to `0.8.5`
+* **@miaoxing/dev:** upgrade from `9.2.0` to `9.3.0`
+* **@mxjs/test:** upgrade from `2.0.5` to `2.0.6`
+
 ## [1.0.18](https://github.com/miaoxing/mxjs-cur-url/compare/v1.0.17...v1.0.18) (2024-11-01)
 
 
